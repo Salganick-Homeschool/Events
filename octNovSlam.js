@@ -1,4 +1,4 @@
-const fullName = document.getElementById("octNovName")
+const fullName = document.getElementById("octNovFullName")
 const event = document.getElementById("octNovEvent")
 const email = document.getElementById("octNovEmailAddress")
 const phone = document.getElementById("octNovPhoneNum")
@@ -6,7 +6,7 @@ const submitButton = document.getElementById("octNovSubmitBtn")
 const nickname = document.getElementById("octNovNickname")
 const schoolProectForm = document.getElementById("octNovPoemForm")
 const database = firebase.database();
-const rootRef = database.ref('October/November Poem Slam');
+const rootRef = database.ref('October + November Poem Slam');
 const ticketNum = document.getElementById("octNovHowMany")
 const agree = document.getElementById("octNovAgree")
 let didAgree = false
