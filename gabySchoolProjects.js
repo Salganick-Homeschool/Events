@@ -1,17 +1,17 @@
-const event = document.getElementById("event")
-const fullName = document.getElementById("fullName")
-const email = document.getElementById("emailAddress")
-const phone = document.getElementById("phoneNum")
-const submitButton = document.getElementById("submitBtn")
-const nickname = document.getElementById("nickname")
-const unscheduledForm = document.getElementById("unscheduledForm")
+const fullName = document.getElementById("schoolFullName")
+const event = document.getElementById("schoolEvent")
+const email = document.getElementById("schoolEmailAddress")
+const phone = document.getElementById("schoolPhoneNum")
+const submitButton = document.getElementById("schoolSubmitBtn")
+const nickname = document.getElementById("schoolNickname")
+const schoolProectForm = document.getElementById("schoolProjectForm")
 const database = firebase.database();
-const rootRef = database.ref('Unscheduled Event Recipients');
-const ticketNum = document.getElementById("howMany")
-const agree = document.getElementById("agree")
+const rootRef = database.ref('Gaby School Projects');
+const ticketNum = document.getElementById("schoolHowMany")
+const agree = document.getElementById("schoolAgree")
 let didAgree = false
-if (unscheduledForm) {
-unscheduledForm.addEventListener("submit", (e) => {
+if (schoolProectForm) {
+schoolProectForm.addEventListener("submit", (e) => {
     if (agree) {
         didAgree=true
     }
@@ -23,7 +23,7 @@ unscheduledForm.addEventListener("submit", (e) => {
         email: email.value,
         phoneNum: phone.value,
         numberOfTickets: ticketNum.value,
-        cost: paymentAmount,
+        cost: paymentAmount+" kisses",
         didAgree: didAgree
     })
     paymentAmount = ((ticketNum.value)*11)+((ticketNum.value)*9)+((ticketNum.value)*7)

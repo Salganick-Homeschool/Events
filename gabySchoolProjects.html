@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up for Gaby School Projects Showing</title>
+    <style>
+      input {
+        background-color:red;
+        border:5px solid rgba(255,255,255,0.5);
+        color:yellow;
+      }
+      button {
+        background-color:blue;
+        border:5px solid rgba(255,255,255,0.5);
+        color:yellow;
+      }
+    </style>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebase/8.1.2/firebase-auth.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDZ23sfhJCwrvKF40qqD3PpKgj0lYA0wIY",
+    authDomain: "mgm-magic.firebaseapp.com",
+    databaseURL: "https://mgm-magic.firebaseio.com",
+    projectId: "mgm-magic",
+    storageBucket: "mgm-magic.appspot.com",
+    messagingSenderId: "857570883834",
+    appId: "1:857570883834:web:f522449cbc862a40437143",
+    measurementId: "G-G91S2SQM9Y"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+</head>
+<body>
+    <h1>Sign Up for Gaby School Projects Showing</h1>
+    <h3>Date: Friday December 11, 2020</h3>
+    <hr>
+    <form id="schoolProjectForm">
+        <input type="text" name="event" id="schoolEvent" placeholder="Event" disabled value="Gaby School Projects">
+        <br>
+        <input type="text" name="nickname" id="schoolNickname" placeholder="Nickname">
+        <br>
+        <input type="text" name="fullName" id="schoolFullName" placeholder="Full Name" required>
+        <br>
+        <input type="email" name="email" id="schoolEmailAddress" placeholder="Email Address" required>
+        <br>
+        <input type="number" name="phoneNum" id="schoolPhoneNum" placeholder="Phone Number" required>
+        <br>
+        <input type="number" name="howMany" id="schoolHowMany" placeholder="How Many Tickets?">
+        <br>
+        <hr>
+        <p>You can use my email or phone number to contact me about timings and dates.</p>
+        <input type="checkbox" name="agree" id="schoolAgree" value="I agree" required>I agree
+        <br>
+        <button type="submit" name="submit" id="schoolSubmitBtn">Submit</button>
+    </form>
+    <script src="gabySchoolProjects.js" defer></script>
+</body>
+</html>
