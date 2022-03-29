@@ -1,3 +1,16 @@
+import { initializeApp } from 'firebase/app';
+import { getDatabase,ref,set } from "firebase/database";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAQBINRXgXTdIcFthbdPHcpBacplfiInUI",
+  authDomain: "mgm-events.firebaseapp.com",
+  projectId: "mgm-events",
+  storageBucket: "mgm-events.appspot.com",
+  messagingSenderId: "195307897416",
+  appId: "1:195307897416:web:e469a64586a23df8f68e7d",
+  measurementId: "G-SXZL0MW74Q"
+};
+const database = getDatabase();
 const event = document.getElementById("event")
 const fullName = document.getElementById("fullName")
 const email = document.getElementById("emailAddress")
@@ -11,10 +24,16 @@ const ticketNum = document.getElementById("howMany")
 const agree = document.getElementById("agree")
 let didAgree = false
 if (unscheduledForm) {
-unscheduledForm.addEventListener("submit", (e) => {
-    if (agree) {
-        didAgree=true
-    }
+function writeUserData(event, fullName, email, phone, nickname, ticketnum) {
+  const db = getDatabase();
+  set(ref(db, 'users/' + userId), {
+    fullName: fullName,
+    emailaddress: email,
+    phonenumber : phone,
+    nick:nickname,
+    ticketnumber:ticketnum,
+  });
+}
     let paymentAmount = ((ticketNum.value)*11)+((ticketNum.value)*9)+((ticketNum.value)*7)
     e.preventDefault()
     rootRef.child(fullName.value).set({
