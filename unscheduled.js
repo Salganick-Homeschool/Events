@@ -4,6 +4,7 @@ import { getDatabase,ref,set } from "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyAQBINRXgXTdIcFthbdPHcpBacplfiInUI",
   authDomain: "mgm-events.firebaseapp.com",
+  databaseURL: "https://mgm-events-default-rtdb.firebaseio.com",
   projectId: "mgm-events",
   storageBucket: "mgm-events.appspot.com",
   messagingSenderId: "195307897416",
